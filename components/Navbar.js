@@ -26,12 +26,12 @@ const Navbar=()=> {
     }, [theme]);
 
     return (
-        <nav id="nav" className="navbar navbar-expand-md">
-        <div className="container-fluid">
+        <nav id="nav" className={`navbar navbar-expand-md ${theme === "light" ? 'navbar-light' : 'navbar-dark'} ${styles.navbar_container}`}>
+        <div className={`container-fluid`}>
     
           <div className="navbar-brand text-dark d-flex align-items-center" href="index.html">
-            <h1 className="me-3">Era Planner</h1>
-            <div class="theme-switch-container">
+            <Link href="/" className={`${styles.brand_text}`}><h1 className='mx-3'>Era Planner</h1></Link>
+            <div class={`${styles.theme_switch_container}`}>
               <ReactSwitch 
                 onChange={handleSwitchChange}
                 checked={theme === 'dark'}
@@ -41,38 +41,30 @@ const Navbar=()=> {
             uncheckedIcon={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', fontSize: 12, color: 'black', paddingRight: 2 }}>☀️</div>}
                 />
               <span id="toggle-icon">
-                  <span className="toggle-text ms-2">โหมดกลางวัน</span>
+                  <span className="toggle-text ms-2">{theme === "light" ? 'โหมดกลางวัน' : 'โหมดกลางคืน'}</span>
               </span>
     
           </div>
         </div>
     
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon text-white"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <div className="collapse navbar-collapse me-2" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link active text-center" aria-current="page" href="/"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Home</button></Link>
+                <Link className="nav-link active text-center" aria-current="page" href="/calendar"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Calendar</button></Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-center" href="/calendar"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Write</button></Link>
+                <Link className="nav-link text-center" href="/journal"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Daily Journal</button></Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-center" href="/"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Blog</button></Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-center" href=""><button className="btn btn-primary bg-transparent border-0 px-3 text-warning">Sign up</button></Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link text-center" href=""><button className="btn btn-primary bg-transparent border-0 px-3 text-warning">Login</button></Link>
+                <Link className="nav-link text-center" href="/todo"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">To-do list</button></Link>
               </li>
             </ul>
           </div>
     
         </div>
-    
-        
     
       </nav>
 

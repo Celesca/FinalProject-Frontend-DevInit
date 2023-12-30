@@ -1,4 +1,16 @@
-.logo_container {
-    display:flex;
-    color: green;
+.navbar_container {
+    background-color: var(--bg-color);
+}
+
+.theme_switch_container {
+    color: var(--text-color);
+}
+
+.brand_text{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.brand_text:hover{
+    text-decoration: none;
 }

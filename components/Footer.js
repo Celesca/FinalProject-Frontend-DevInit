@@ -4,8 +4,8 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="copyright">
-                            <p>Copyright © 2021 EraPlanner</p>
+                        <div className="copyright text-center">
+                            <p>Copyright © 2024 EraPlanner</p>
                         </div>
                     </div>
                 </div>
