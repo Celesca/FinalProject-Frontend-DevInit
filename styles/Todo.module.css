@@ -1,0 +1,20 @@
+.todo_container {
+    background-color: red;
+    padding: 1.2rem;
+    border-radius: 0.25rem;
+}
+
+.text_input {
+    padding: 0.25rem;
+    font-size: 1.25rem;
+    background: lightcyan;
+}
+
+.submit_btn {
+    background-color: purple;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    border: transparent;
+    font-size: 1.2rem;
+}

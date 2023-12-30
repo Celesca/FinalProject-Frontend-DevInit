@@ -1,7 +1,9 @@
 import Swal from 'sweetalert2';
 import styles from '@/styles/Todo.module.css'
 import { useState } from 'react';
-
+import { v4 as uuidv4} from 'uuid';
+import List from '@/components/List';
+ 
 export default function Todo() {
 
     const [name,setName] = useState("")
@@ -14,7 +16,7 @@ export default function Todo() {
         e.preventDefault()
         if(!(name.trim()) ) {
           // แสดง Alert
-          setAlert({show:true,msg:'กรุณาป้อนข้อมูลด้วยครับ',type:"error"})
+          showAlert("error", "กรุณากรอกข้อมูลให้ครบ", "ไม่สามารถกรอกเพียงอักษรว่างได้")
         } 
         else if (checkEditItem && name) {
           // กระบวนการอัพเดทข้อมูล รายการที่ต้องการแก้ไข
@@ -27,7 +29,7 @@ export default function Todo() {
           })
           setList(result)
           setName('')
-          setAlert({show:true,msg:'แก้ไขข้อมูลเรียบร้อย',type:'success'})
+          showAlert("success" , "แก้ไขข้อมูลเสร็จสิ้น" , "แก้ไขข้อมูลรายการในระบบเรียบร้อย")
           setCheckEditItem(false)
           setEditId(null)
         }
@@ -40,7 +42,7 @@ export default function Todo() {
           }
           setList([...list,newItem]) // เพิ่มข้อมูลเข้าไปใน list
           setName('') // clear ข้อมูล
-          setAlert({show:true,msg:'บันทึกข้อมูลเรียบร้อย',type:"success"})
+          showAlert("success" , "บันทึกข้อมูลเสร็จสิ้น" , "ทำการบันทึกข้อมูลเข้าสู่ระบบเรียบร้อย")
         }
     
       }
@@ -50,7 +52,7 @@ export default function Todo() {
     const removeItem = (id) => {
         const result = list.filter((item)=> item.id !== id)
         setList(result)
-        setAlert({show:true,msg:"ลบข้อมูลเรียบร้อย",type:"error"})
+        showAlert("error", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
     }
 
     const editItem = (id) => {
@@ -60,30 +62,27 @@ export default function Todo() {
         setName(searchItem.title)
     }
 
-
-
-
-    const successAlert =() => {
+    const showAlert =(eventIcon,eventTitle,eventText) => {
         Swal.fire({
-        title: "เพิ่มข้อมูลสำเร็จ",
-        icon: "success",
-        text: "ทำการเพิ่มสิ่งที่ต้องทำอันใหม่เข้าไป",
+        title: eventTitle,
+        icon: eventIcon,
+        text: eventText,
         confirmButtonText: "ตกลง"
     })
 }
     return (
         <>
-            <section className={`container ${styles.todo_container}`}>
+            <section className={`container-fluid ${styles.todo_container}`}>
                 <h1>To-do List</h1>
                 <form className="form-group" onSubmit={submitData}>
                     <div className="form-control">
-                    <input type="text" className="text-input" 
-                    onChange={(e)=>setName(e.target.value)}
-                    value={name}
-                    />
-                    <button type="submit" className="submit-btn">
-                        {checkEditItem ? "แก้ไขข้อมูล" : "เพิ่มข้อมูล"}
-                        </button>
+                      <input type="text" className={`${styles.text_input}`}
+                      onChange={(e)=>setName(e.target.value)}
+                      value={name}
+                      />
+                      <button type="submit" className={`${styles.submit_btn}`}>
+                          {checkEditItem ? "แก้ไขข้อมูล" : "เพิ่มข้อมูล"}
+                      </button>
                     </div>
                 </form>
 
