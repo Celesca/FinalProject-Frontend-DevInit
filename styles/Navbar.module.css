@@ -15,6 +15,6 @@
     text-decoration: none;
 }
 
-.nav_item {
-    color: var(--text-color)
+.item_text {
+    color: var(--text-color);
 }

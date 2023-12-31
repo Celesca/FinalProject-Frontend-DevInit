@@ -29,7 +29,7 @@ const Navbar=()=> {
         <nav id="nav" className={`navbar navbar-expand-md ${theme === "light" ? 'navbar-light' : 'navbar-dark'} ${styles.navbar_container}`}>
         <div className={`container-fluid`}>
     
-          <div className="navbar-brand text-dark d-flex align-items-center" href="index.html">
+          <div className="navbar-brand d-flex align-items-center" href="index.html">
             <Link href="/" className={`${styles.brand_text}`}><h1 className='mx-3'>Era Planner</h1></Link>
             <div class={`${styles.theme_switch_container}`}>
               <ReactSwitch 
@@ -48,18 +48,18 @@ const Navbar=()=> {
         </div>
     
           <button className="navbar-toggler me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon text-white"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse me-2" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link active text-center" aria-current="page" href="/calendar"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.nav_item}`}>Calendar</button></Link>
+                <Link className="nav-link active text-center" aria-current="page" href="/calendar"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.item_text}`}>Calendar</button></Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-center" href="/journal"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.nav_item}`}>Daily Journal</button></Link>
+                <Link className="nav-link text-center" href="/journal"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.item_text}`}>Daily Journal</button></Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-center" href="/todo"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.nav_item}`}>To-do list</button></Link>
+                <Link className="nav-link text-center" href="/todo"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.item_text}`}>To-do list</button></Link>
               </li>
             </ul>
           </div>
