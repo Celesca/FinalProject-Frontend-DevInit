@@ -53,13 +53,13 @@ const Navbar=()=> {
           <div className="collapse navbar-collapse me-2" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link className="nav-link active text-center" aria-current="page" href="/calendar"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Calendar</button></Link>
+                <Link className="nav-link active text-center" aria-current="page" href="/calendar"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.nav_item}`}>Calendar</button></Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-center" href="/journal"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">Daily Journal</button></Link>
+                <Link className="nav-link text-center" href="/journal"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.nav_item}`}>Daily Journal</button></Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-center" href="/todo"><button className="btn btn-primary bg-transparent border-0 px-3 text-dark">To-do list</button></Link>
+                <Link className="nav-link text-center" href="/todo"><button className={`btn btn-primary bg-transparent border-0 px-3 ${styles.nav_item}`}>To-do list</button></Link>
               </li>
             </ul>
           </div>

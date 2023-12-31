@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 import styles from '@/styles/Todo.module.css'
+import { FaSearch } from "react-icons/fa"
 import { useState } from 'react';
 import { v4 as uuidv4} from 'uuid';
 import List from '@/components/List';
@@ -50,10 +51,15 @@ export default function Todo() {
     // Function Remove
 
     const removeItem = (id) => {
-        const result = list.filter((item)=> item.id !== id)
-        setList(result)
-        showAlert("error", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
-    }
+        if (checkEditItem) {
+          showAlert("error", "กรุณาแก้ไขข้อมูลให้เสร็จ", "ไม่สามารถทำการลบข้อมูลได้หากแก้ไขอยู่")
+        }
+        else {
+          const result = list.filter((item)=> item.id !== id)
+          setList(result)
+          showAlert("success", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
+       }
+      }
 
     const editItem = (id) => {
         setCheckEditItem(true);
@@ -73,20 +79,37 @@ export default function Todo() {
     return (
         <>
             <section className={`container-fluid ${styles.todo_container}`}>
-                <h1>To-do List</h1>
-                <form className="form-group" onSubmit={submitData}>
-                    <div className="form-control">
-                      <input type="text" className={`${styles.text_input}`}
-                      onChange={(e)=>setName(e.target.value)}
-                      value={name}
-                      />
-                      <button type="submit" className={`${styles.submit_btn}`}>
-                          {checkEditItem ? "แก้ไขข้อมูล" : "เพิ่มข้อมูล"}
-                      </button>
-                    </div>
-                </form>
+                <h1 className="text-center display-2">To-do List</h1>
 
-                <section className="list-container">
+                <div className="container">
+
+                  <div className="row justify-content-center">
+                    <div className="col-12 col-md-10 col-lg-8">
+                              <form className={`card card-sm form-group ${styles.search_form}`} onSubmit={submitData}>
+                                  <div className="card-body row align-items-center">
+                                      <div className="col">
+                                          <input className={`form-control form-control-lg ${styles.text_input}`}
+                                          type="text"
+                                          onChange={(e)=>setName(e.target.value)}
+                                          value={name}
+                                          />
+                                      </div>
+
+                                      <div className="col-auto">
+                                          <button className={`btn btn-lg btn-success ${styles.submit_btn}`} 
+                                          type="submit">
+                                          {checkEditItem ? "แก้ไขข้อมูล" : "เพิ่มข้อมูล"}</button>
+                                      </div>
+
+                                  </div>
+                              </form>
+                          </div>
+
+                  </div>
+
+                </div>
+
+                <section className="container d-flex flex-column justify-content-center list-container">
                     {list.map((data,index)=>{
                     return <List key={index} {...data} removeItem={removeItem} editItem={editItem}/>})}
                 </section>

@@ -14,3 +14,7 @@
 .brand_text:hover{
     text-decoration: none;
 }
+
+.nav_item {
+    color: var(--text-color)
+}

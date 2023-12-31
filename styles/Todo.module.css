@@ -1,20 +1,48 @@
 .todo_container {
-    background-color: red;
+
     padding: 1.2rem;
-    border-radius: 0.25rem;
+    
+}
+
+/* Search bar Section */
+
+.search_form {
+    border:0;
+}
+
+.search_bar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+
 }
 
 .text_input {
-    padding: 0.25rem;
-    font-size: 1.25rem;
-    background: lightcyan;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
+
+/* .text_input {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border:0;
+    outline:0;
+    background: lightcyan;
+} */
 
 .submit_btn {
     background-color: purple;
-    color: #fff;
-    font-weight: 800;
-    cursor: pointer;
-    border: transparent;
-    font-size: 1.2rem;
+    border:0;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .search_bar {
+        flex-direction: column;
+    }
 }
