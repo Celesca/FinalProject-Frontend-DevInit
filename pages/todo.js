@@ -1,7 +1,6 @@
 import Swal from 'sweetalert2';
 import styles from '@/styles/Todo.module.css'
-import { FaSearch } from "react-icons/fa"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuidv4} from 'uuid';
 import List from '@/components/List';
  
@@ -29,6 +28,7 @@ export default function Todo() {
             return item
           })
           setList(result)
+          localStorage.setItem('todo-data', JSON.stringify(result));
           setName('')
           showAlert("success" , "แก้ไขข้อมูลเสร็จสิ้น" , "แก้ไขข้อมูลรายการในระบบเรียบร้อย")
           setCheckEditItem(false)
@@ -42,6 +42,7 @@ export default function Todo() {
             title: name
           }
           setList([...list,newItem]) // เพิ่มข้อมูลเข้าไปใน list
+          localStorage.setItem('todo-data', JSON.stringify([... list, newItem]))
           setName('') // clear ข้อมูล
           showAlert("success" , "บันทึกข้อมูลเสร็จสิ้น" , "ทำการบันทึกข้อมูลเข้าสู่ระบบเรียบร้อย")
         }
@@ -57,6 +58,7 @@ export default function Todo() {
         else {
           const result = list.filter((item)=> item.id !== id)
           setList(result)
+          localStorage.setItem('todo-data', JSON.stringify(result));
           showAlert("success", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
        }
       }
@@ -75,7 +77,14 @@ export default function Todo() {
         text: eventText,
         confirmButtonText: "ตกลง"
     })
-}
+    }
+
+    // // Load the data
+    useEffect(() => {
+      const loadData = localStorage.getItem("todo-data");
+      setList(JSON.parse(loadData));
+    } , [])
+    
     return (
         <>
             <section className={`container-fluid ${styles.todo_container}`}>
@@ -110,7 +119,7 @@ export default function Todo() {
                 </div>
 
                 <section className="container d-flex flex-column justify-content-center list-container">
-                    {list.map((data,index)=>{
+                    { list.map((data,index)=>{
                     return <List key={index} {...data} removeItem={removeItem} editItem={editItem}/>})}
                 </section>
 
