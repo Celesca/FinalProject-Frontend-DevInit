@@ -1,11 +1,58 @@
 import Head from "next/head"
 import styles from "@/styles/Calendar.module.css"
 import { Inter } from 'next/font/google'
+import CalendarComponent from "@/components/Calendar"
+import { useState } from "react"
+import { Button, Modal, Form } from 'react-bootstrap';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Calendar() {
 
+    const [events, setEvents] = useState([
+        { title: 'Event 1', date: '2023-01-01' },
+        { title: 'Event 2', date: '2023-01-15' },
+      ]);
+      const [showModal, setShowModal] = useState(false);
+      const [newEvent, setNewEvent] = useState({ date: '', title: '' });
+    
+      const handleEventClick = (event) => {
+        console.log('Event Clicked:', event);
+      };
+    
+      const handleDateSelect = (selectInfo) => {
+        console.log('Date Selected:', selectInfo.startStr);
+      };
+    
+      const handleEventDrop = (dropInfo) => {
+        console.log('Event Dropped:', dropInfo);
+        const updatedEvents = events.map((event) =>
+          event.id === dropInfo.event.id ? { ...event, date: dropInfo.event.startStr } : event
+        );
+        setEvents(updatedEvents);
+      };
+    
+      const handleShowModal = () => setShowModal(true);
+      const handleCloseModal = () => setShowModal(false);
+    
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setNewEvent((prevEvent) => ({ ...prevEvent, [name]: value }));
+      };
+    
+      const handleAddEvent = () => {
+        if (!newEvent.date || !newEvent.title.trim()) {
+          // Validation: Date and Title are required
+          return;
+        }
+    
+        const updatedEvents = [...events, newEvent];
+        setEvents(updatedEvents);
+    
+        // Close the modal and reset the newEvent state
+        handleCloseModal();
+        setNewEvent({ date: '', title: '' });
+      };
     return (
         <>
             <Head>
@@ -15,7 +62,57 @@ export default function Calendar() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
-                This is Python game
+                <div className={`container pt-3`}>
+                <Button variant="primary" className={`mt-2 mb-5`} onClick={handleShowModal}>
+                    เพิ่มอีเว้นท์
+                </Button>
+                <CalendarComponent
+                    events={events}
+                    handleEventClick={handleEventClick}
+                    handleDateSelect={handleDateSelect}
+                    handleEventDrop={handleEventDrop}
+                />
+                </div>
+
+                {/* Modal for adding a new event */}
+                <Modal show={showModal} onHide={handleCloseModal}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Add Event</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                    <Form>
+                        {/* Date Input */}
+                        <Form.Group className="mb-3" controlId="formDate">
+                        <Form.Label>Date</Form.Label>
+                        <Form.Control
+                            type="date"
+                            name="date"
+                            value={newEvent.date}
+                            onChange={handleInputChange}
+                        />
+                        </Form.Group>
+
+                        {/* Title Input */}
+                        <Form.Group className="mb-3" controlId="formTitle">
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control
+                            type="text"
+                            name="title"
+                            value={newEvent.title}
+                            onChange={handleInputChange}
+                        />
+                        </Form.Group>
+                    </Form>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <Button variant="secondary" onClick={handleCloseModal}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleAddEvent}>
+                        Add Event
+                    </Button>
+                    </Modal.Footer>
+                </Modal>
             </main>
         </>
     )

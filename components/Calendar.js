@@ -1,12 +1,23 @@
-import { Calendar } from "@fullcalendar/core"
+import React from 'react';
+import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
+import interactionPlugin from '@fullcalendar/interaction';
 
-export default function CalendarComponent() {
-    return (
-        <div>
-            <h1>Hello Calendar</h1>
-        </div>
-    )
-}
+const CalendarComponent = ({ events, handleEventClick, handleDateSelect, handleEventDrop }) => {
+  return (
+    <FullCalendar
+      plugins={[dayGridPlugin, interactionPlugin]}
+      initialView="dayGridMonth"
+      events={events}
+      editable={true}
+      selectable={true}
+      selectMirror={true} // Highlight the selected date range
+      select={handleDateSelect} // Triggered when a date range is selected
+      eventClick={handleEventClick}
+      eventDrop={handleEventDrop}
+      
+    />
+  );
+};
+
+export default CalendarComponent;

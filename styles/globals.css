@@ -15,3 +15,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+footer {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
