@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import JournalCard from '@/components/JournalCard';
+import styles from '@/styles/Journal.module.css';
 
 const DailyJournalPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -30,26 +31,43 @@ const DailyJournalPage = () => {
       setValidationError('โปรดเลือกวันที่และเพิ่มหัวข้อ');
       return;
     }
-
+  
     // setting the uuid for the submit
-
-    setNewEntry((prevEntry) => ({ ...prevEntry, uuid: uuidv4() }))
-
-    setJournalEntries((prevEntries) => [...prevEntries, newEntry]);
-    setNewEntry({ date: '', header: '', description: '' , uuid:''});
+    const newEntryWithUuid = { ...newEntry, uuid: uuidv4() };
+  
+    setJournalEntries((prevEntries) => {
+      const updatedEntries = [...prevEntries, newEntryWithUuid];
+      localStorage.setItem('journal-data', JSON.stringify(updatedEntries));
+      return updatedEntries;
+    });
+  
+    setNewEntry({ date: '', header: '', description: '', uuid: '' });
     handleCloseModal();
   };
 
   const handleRemoveEntry = (id) => {
     setJournalEntries((prevEntries) => {
-        return prevEntries.filter((journal) => journal.uuid !== id)
-    });
-  };
+        const updatedEntries = prevEntries.filter((journal) => journal.uuid !== id);
+        localStorage.setItem('journal-data', JSON.stringify(updatedEntries));
+        return updatedEntries;
+    })
+  }
+
+  // Load the storage
+
+  useEffect(() => {
+    const loadData = localStorage.getItem("journal-data");
+    if (loadData) {
+        setJournalEntries(JSON.parse(loadData));
+    }
+
+  }, [])
 
   return (
-    <div className="container mt-5">
-      <div className="mb-3">
-        <Button variant="primary" onClick={handleShowModal}>
+    <div className={`container ${styles.journal_container}`}>
+        <h1 className="text-center display-2">Daily Journal</h1>
+      <div className="my-3 d-flex justify-content-center ">
+        <Button className={`${styles.add_button} btn btn-lg btn-success`} onClick={handleShowModal}>
           เพิ่มบันทึก
         </Button>
       </div>
@@ -102,10 +120,10 @@ const DailyJournalPage = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseModal}>
-            Close
+            ยกเลิก
           </Button>
           <Button variant="primary" onClick={handleAddEntry}>
-            Save Entry
+            บันทึก
           </Button>
         </Modal.Footer>
       </Modal>
