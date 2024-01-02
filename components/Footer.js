@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="footer">
+        <footer className="footer mt-3">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">

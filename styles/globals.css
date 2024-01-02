@@ -1,11 +1,13 @@
 [data-theme="light"] {
   --bg-color: #fff;
   --text-color: #000;
+  --secondary-bg-color: #e6e1e1f8;
 }
 
 [data-theme="dark"] {
   --bg-color: #000;
   --text-color: #fff;
+  --secondary-bg-color: #636363;
 }
 
 * {

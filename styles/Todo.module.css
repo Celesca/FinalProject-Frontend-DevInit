@@ -1,13 +1,14 @@
 .todo_container {
-
     padding: 1.2rem;
-    
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* Search bar Section */
 
 .search_form {
     border:0;
+    background-color: var(--secondary-bg-color);
 }
 
 .search_bar {
@@ -21,19 +22,10 @@
 }
 
 .text_input {
-    border: none;
     background-color: var(--bg-color);
+    border: 1px solid var(--secondary-bg-color);
     color: var(--text-color);
 }
-
-/* .text_input {
-    font-size: 1.25rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border:0;
-    outline:0;
-    background: lightcyan;
-} */
 
 .submit_btn {
     background-color: purple;

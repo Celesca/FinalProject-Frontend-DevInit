@@ -31,7 +31,7 @@ const Navbar=()=> {
     
           <div className="navbar-brand d-flex align-items-center" href="index.html">
             <Link href="/" className={`${styles.brand_text}`}><h1 className='mx-3'>Era Planner</h1></Link>
-            <div class={`${styles.theme_switch_container}`}>
+            <div className={`${styles.theme_switch_container}`}>
               <ReactSwitch 
                 onChange={handleSwitchChange}
                 checked={theme === 'dark'}
