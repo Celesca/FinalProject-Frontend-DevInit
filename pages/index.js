@@ -1,10 +1,14 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { IoIosJournal, IoIosListBox } from 'react-icons/io';
+import Link from 'next/link';
+import StaticCalendarComponent from '@/components/StaticCalendar';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -14,7 +18,58 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <h1 className={`${styles.main_text} text-danger`}>Hello World</h1>
+        <div className="container pt-3">
+          <h1>สวัสดีวันจันทร์</h1>
+          <div className="row">
+            
+              <div className="col col-12 col-lg-6">
+                <Link href="/calendar" className={`${styles.static_calendar}`}>
+                  <StaticCalendarComponent 
+                  events={[
+                    { title: 'Event 1', date: '2023-01-01' },
+                    { title: 'Event 2', date: '2023-01-15' },
+                    // Add more events as needed
+                  ]}
+                  staticCalendar={true}
+                  />
+                </Link>
+              </div>
+           
+            <div className="col col-12 col-lg-6">
+              <div className="d-flex flex-column">
+
+                {/* Daily Journal Card */}
+                <Link href="journal" className={`${styles.journal_card}`}>
+                <div className={`card ${styles.card_info} p-4 mt-5`}>
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    15
+                    <span className="visually-hidden">journal collected</span>
+                  </span>
+                  <div className="card-body">
+                    <h3 className="card-title"><IoIosJournal/> Daily Journal</h3>
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                </div>
+                </Link>
+                
+                <Link href="todo" className={`${styles.todo_card}`}>
+                <div className={`card ${styles.card_info} p-4 mt-5`}>
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    4
+                    <span className="visually-hidden">journal collected</span>
+                  </span>
+                  <div className="card-body">
+                    <h3 className="card-title"><IoIosListBox/> To-do List</h3>
+                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  </div>
+                </div>
+                </Link>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
       </main>
     </>
   )

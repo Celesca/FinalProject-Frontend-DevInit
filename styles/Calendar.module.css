@@ -1,3 +1,7 @@
 .main {
     background-color: var(--bg-color);
 }
+
+.calendar_body {
+    color: var(--text-color);
+}

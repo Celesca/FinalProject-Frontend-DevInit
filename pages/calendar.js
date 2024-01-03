@@ -63,15 +63,17 @@ export default function Calendar() {
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
                 <div className={`container pt-3`}>
-                <Button variant="primary" className={`mt-2 mb-5`} onClick={handleShowModal}>
-                    เพิ่มอีเว้นท์
-                </Button>
-                <CalendarComponent
-                    events={events}
-                    handleEventClick={handleEventClick}
-                    handleDateSelect={handleDateSelect}
-                    handleEventDrop={handleEventDrop}
-                />
+                  <Button variant="primary" className={`mt-2 mb-5`} onClick={handleShowModal}>
+                      เพิ่มอีเว้นท์
+                  </Button>
+                  <div className={`${styles.calendar_body}`}>
+                  <CalendarComponent 
+                      events={events}
+                      handleEventClick={handleEventClick}
+                      handleDateSelect={handleDateSelect}
+                      handleEventDrop={handleEventDrop}
+                  />
+                  </div>
                 </div>
 
                 {/* Modal for adding a new event */}
