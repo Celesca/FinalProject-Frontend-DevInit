@@ -78,7 +78,7 @@ export default function Todo() {
               setList(result)
               localStorage.setItem('todo-data', JSON.stringify(result));
               showAlert("success", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
-              
+
             }
           });
 
@@ -127,7 +127,7 @@ export default function Todo() {
                                       </div>
 
                                       <div className="col-auto">
-                                          <button className={`btn btn-lg btn-success ${styles.submit_btn}`} 
+                                          <button className={`btn btn-lg btn-primary ${styles.submit_btn}`} 
                                           type="submit">
                                           {checkEditItem ? "แก้ไขข้อมูล" : "เพิ่มข้อมูล"}</button>
                                       </div>

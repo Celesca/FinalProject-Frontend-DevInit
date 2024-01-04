@@ -3,6 +3,7 @@ import Layout from '@/components/Layout'
 import 'bootstrap/dist/css/bootstrap.css'
 import Script from 'next/script'
 import Head from 'next/head'
+import { EventProvider } from '@/contexts/EventContext'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,9 +17,11 @@ export default function App({ Component, pageProps }) {
         </link>
       </Head>
       <Script id="bootstrap-cdn" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <EventProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </EventProvider>
     </>
   )
 }

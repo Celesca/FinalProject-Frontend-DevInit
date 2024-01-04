@@ -2,19 +2,23 @@ import Head from "next/head"
 import styles from "@/styles/Calendar.module.css"
 import { Inter } from 'next/font/google'
 import CalendarComponent from "@/components/Calendar"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button, Modal, Form } from 'react-bootstrap';
+import { useEventContext } from "@/contexts/EventContext"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Calendar() {
 
-    const [events, setEvents] = useState([
-        { title: 'Event 1', date: '2023-01-01' },
-        { title: 'Event 2', date: '2023-01-15' },
-      ]);
+      const { events: contextEvents, setEvents, addEvents, removeEvent } = useEventContext();
+
+      const [localEvents, setLocalEvents] = useState(contextEvents);
       const [showModal, setShowModal] = useState(false);
       const [newEvent, setNewEvent] = useState({ date: '', title: '' });
+
+      useEffect(() => {
+        setLocalEvents(contextEvents);
+      })
     
       const handleEventClick = (event) => {
         console.log('Event Clicked:', event);
@@ -26,10 +30,15 @@ export default function Calendar() {
     
       const handleEventDrop = (dropInfo) => {
         console.log('Event Dropped:', dropInfo);
-        const updatedEvents = events.map((event) =>
+        console.log('Local Events Before Update :' , localEvents);
+
+        const updatedLocalEvents = localEvents.map((event) =>
           event.id === dropInfo.event.id ? { ...event, date: dropInfo.event.startStr } : event
         );
-        setEvents(updatedEvents);
+
+        console.log('Updated local events', updatedLocalEvents)
+        setLocalEvents(updatedLocalEvents);
+        setEvents(updatedLocalEvents);
       };
     
       const handleShowModal = () => setShowModal(true);
@@ -46,13 +55,17 @@ export default function Calendar() {
           return;
         }
     
-        const updatedEvents = [...events, newEvent];
-        setEvents(updatedEvents);
+        const updatedLocalEvents = [...localEvents, newEvent];
+        setLocalEvents(updatedLocalEvents);
+
+        setEvents(updatedLocalEvents);
     
         // Close the modal and reset the newEvent state
         handleCloseModal();
         setNewEvent({ date: '', title: '' });
       };
+
+
     return (
         <>
             <Head>
@@ -68,7 +81,7 @@ export default function Calendar() {
                   </Button>
                   <div className={`${styles.calendar_body}`}>
                   <CalendarComponent 
-                      events={events}
+                      events={localEvents}
                       handleEventClick={handleEventClick}
                       handleDateSelect={handleDateSelect}
                       handleEventDrop={handleEventDrop}

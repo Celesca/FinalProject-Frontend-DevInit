@@ -4,10 +4,13 @@ import styles from '@/styles/Home.module.css'
 import { IoIosJournal, IoIosListBox } from 'react-icons/io';
 import Link from 'next/link';
 import StaticCalendarComponent from '@/components/StaticCalendar';
+import { useEventContext } from '@/contexts/EventContext';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const { events } = useEventContext();
 
   return (
     <>
@@ -19,17 +22,13 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className="container pt-3">
-          <h1>สวัสดีวันจันทร์</h1>
+          <h1 className={`${styles.greetings}`}>สวัสดีคุณ, Celesca</h1>
           <div className="row">
             
               <div className="col col-12 col-lg-6">
                 <Link href="/calendar" className={`${styles.static_calendar}`}>
                   <StaticCalendarComponent 
-                  events={[
-                    { title: 'Event 1', date: '2023-01-01' },
-                    { title: 'Event 2', date: '2023-01-15' },
-                    // Add more events as needed
-                  ]}
+                  events={events}
                   staticCalendar={true}
                   />
                 </Link>

@@ -9,7 +9,6 @@ const CalendarComponent = ({ events, handleEventClick, handleDateSelect, handleE
       plugins={[dayGridPlugin, interactionPlugin]}
       initialView="dayGridMonth"
       events={events}
-      editable={true}
       selectable={true}
       selectMirror={true} // Highlight the selected date range
       select={handleDateSelect} // Triggered when a date range is selected

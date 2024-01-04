@@ -102,7 +102,7 @@ const DailyJournalPage = () => {
     <div className={`container `}>
         <h1 className="text-center display-2">Daily Journal</h1>
       <div className="my-3 d-flex justify-content-center ">
-        <Button className={`${styles.add_button} btn btn-lg btn-success`} onClick={handleShowModal}>
+        <Button className={`${styles.add_button} btn btn-lg btn-primary`} onClick={handleShowModal}>
           เพิ่มบันทึก
         </Button>
       </div>

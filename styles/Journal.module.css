@@ -6,7 +6,6 @@
 }
 
 .add_button {
-    background-color: var(--secondary-bg-color);
-    color: var(--text-color);
+    margin-top: 20px;
     border: 1px solid var(--secondary-bg-color);
 }

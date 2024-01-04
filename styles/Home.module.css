@@ -26,3 +26,7 @@
 .journal_card:hover , .todo_card:hover , .static_calendar:hover {
     text-decoration: none;
 }
+
+.greetings {
+    color: var(--text-color);
+}
