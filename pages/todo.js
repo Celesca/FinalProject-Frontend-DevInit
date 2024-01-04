@@ -56,10 +56,32 @@ export default function Todo() {
           showAlert("error", "กรุณาแก้ไขข้อมูลให้เสร็จ", "ไม่สามารถทำการลบข้อมูลได้หากแก้ไขอยู่")
         }
         else {
-          const result = list.filter((item)=> item.id !== id)
-          setList(result)
-          localStorage.setItem('todo-data', JSON.stringify(result));
-          showAlert("success", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
+
+          Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+      
+              // begin to remove
+              const result = list.filter((item)=> item.id !== id)
+              setList(result)
+              localStorage.setItem('todo-data', JSON.stringify(result));
+              showAlert("success", "ลบข้อมูลเสร็จสิ้น","ทำการลบข้อมูลรายการเรียบร้อย")
+              
+            }
+          });
+
        }
       }
 

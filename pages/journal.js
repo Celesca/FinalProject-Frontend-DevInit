@@ -3,6 +3,7 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
 import JournalCard from '@/components/JournalCard';
 import styles from '@/styles/Journal.module.css';
+import Swal from 'sweetalert2';
 
 const DailyJournalPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -38,6 +39,7 @@ const DailyJournalPage = () => {
     setJournalEntries((prevEntries) => {
       const updatedEntries = [...prevEntries, newEntryWithUuid];
       localStorage.setItem('journal-data', JSON.stringify(updatedEntries));
+      showAlert("success", "เพิ่มข้อมูลเรียบร้อย" , "ทำการบันทึกลงฐานข้อมูลเซิฟเวอร์เรียบร้อย")
       return updatedEntries;
     });
   
@@ -46,12 +48,44 @@ const DailyJournalPage = () => {
   };
 
   const handleRemoveEntry = (id) => {
-    setJournalEntries((prevEntries) => {
-        const updatedEntries = prevEntries.filter((journal) => journal.uuid !== id);
-        localStorage.setItem('journal-data', JSON.stringify(updatedEntries));
-        return updatedEntries;
-    })
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+
+        // begin to remove
+          setJournalEntries((prevEntries) => {
+            const updatedEntries = prevEntries.filter((journal) => journal.uuid !== id);
+            localStorage.setItem('journal-data', JSON.stringify(updatedEntries));
+            return updatedEntries;
+        })
+      }
+    });
+    
   }
+
+
+
+  const showAlert =(eventIcon,eventTitle,eventText) => {
+      Swal.fire({
+      title: eventTitle,
+      icon: eventIcon,
+      text: eventText,
+      confirmButtonText: "ตกลง"
+  })
+  }
+
 
   // Load the storage
 
