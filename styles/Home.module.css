@@ -34,8 +34,6 @@
     transition: background-color 0.1s linear;
 }
 
-
-
-.greetings {
+.heading_text {
     color: var(--text-color);
 }

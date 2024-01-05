@@ -1,4 +1,4 @@
-import { Card, Button} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 export default function JournalCard(props) {
 
@@ -23,5 +23,5 @@ export default function JournalCard(props) {
         </Card.Body>
     </Card>
     </div>
-        )
+    )
 }
