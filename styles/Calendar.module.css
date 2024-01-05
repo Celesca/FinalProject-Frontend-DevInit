@@ -5,3 +5,18 @@
 .calendar_body {
     color: var(--text-color);
 }
+
+.add_button {
+    display: flex;
+    justify-content: start;
+}
+
+.add_button button {
+    padding: 10px 50px 10px 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .add_button {
+        justify-content: center;
+    }
+}

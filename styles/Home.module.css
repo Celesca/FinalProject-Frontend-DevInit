@@ -18,14 +18,23 @@
     transition: background-color 0.1s linear;
 }
 
-.journal_card , .todo_card, .static_calendar {
+.journal_card , .todo_card, .static_calendar_2 , .static_calendar {
     color: var(--text-color);
     text-decoration: none;
 }
 
-.journal_card:hover , .todo_card:hover , .static_calendar:hover {
+.journal_card:hover , .todo_card:hover , .static_calendar:hover{
+    cursor:pointer;
+    color: var(--text-color);
     text-decoration: none;
 }
+
+.static_background:hover {
+    background-color: rgba(13,110,253,0.5);
+    transition: background-color 0.1s linear;
+}
+
+
 
 .greetings {
     color: var(--text-color);

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Calendar() {
 
-      const { events: contextEvents, setEvents, addEvents, removeEvent } = useEventContext();
+      const { events: contextEvents, setEvents} = useEventContext();
 
       const [localEvents, setLocalEvents] = useState(contextEvents);
       const [showModal, setShowModal] = useState(false);
@@ -26,19 +26,6 @@ export default function Calendar() {
     
       const handleDateSelect = (selectInfo) => {
         console.log('Date Selected:', selectInfo.startStr);
-      };
-    
-      const handleEventDrop = (dropInfo) => {
-        console.log('Event Dropped:', dropInfo);
-        console.log('Local Events Before Update :' , localEvents);
-
-        const updatedLocalEvents = localEvents.map((event) =>
-          event.id === dropInfo.event.id ? { ...event, date: dropInfo.event.startStr } : event
-        );
-
-        console.log('Updated local events', updatedLocalEvents)
-        setLocalEvents(updatedLocalEvents);
-        setEvents(updatedLocalEvents);
       };
     
       const handleShowModal = () => setShowModal(true);
@@ -76,15 +63,16 @@ export default function Calendar() {
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
                 <div className={`container pt-3`}>
+                  <div className={`${styles.add_button}`}>
                   <Button variant="primary" className={`mt-2 mb-5`} onClick={handleShowModal}>
                       เพิ่มอีเว้นท์
                   </Button>
+                  </div>
                   <div className={`${styles.calendar_body}`}>
                   <CalendarComponent 
                       events={localEvents}
                       handleEventClick={handleEventClick}
                       handleDateSelect={handleDateSelect}
-                      handleEventDrop={handleEventDrop}
                   />
                   </div>
                 </div>

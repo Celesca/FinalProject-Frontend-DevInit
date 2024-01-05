@@ -13,10 +13,24 @@ const DailyJournalPage = () => {
   const [journalEntries, setJournalEntries] = useState([]);
   const [newEntry, setNewEntry] = useState({ date: '', header: '', description: '', uuid: '' });
   const [validationError, setValidationError] = useState('');
+  const [showDescriptionModal, setShowDescriptionModal] = useState(false);
+  const [showData, setShowData ] = useState({ date: '', header: '', description: '' }); 
+
+
   const handleShowModal = () => {
     setValidationError('');
     setShowModal(true);
   };
+
+  const handleCardClick = (entry) => {
+    setShowData(entry)
+    setShowDescriptionModal(true);
+  };
+
+  const handleCloseCardClick = () => {
+    setShowData({ date: '', header: '' , description: ''})
+    setShowDescriptionModal(false);
+  }
 
   const handleCloseModal = () => {
     setNewEntry({ date: '', header: '', description: '', uuid: '' });
@@ -51,18 +65,19 @@ const DailyJournalPage = () => {
 
   const handleRemoveEntry = (id) => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      title: "คุณต้องการจะลบบันทึก?",
+      text: "คุณจะไม่สามารถกู้คืนบันทึกของคุณได้อีก",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      cancelButtonText: "ยกเลิก",
+      confirmButtonText: "ใช่, ฉันแน่ใจ"
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
+          title: "ทำการลบบันทึกเรียบร้อย",
+          text: "บันทึกของคุณถูกลบทิ้งอย่างถาวร",
           icon: "success"
         });
 
@@ -168,12 +183,32 @@ const DailyJournalPage = () => {
       {/* List of Journal Entries */}
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {journalEntries.map((entry, index) => {
-            return <JournalCard key={index} {...entry} handleRemoveEntry={handleRemoveEntry}>
+            return <JournalCard key={index} {...entry} handleRemoveEntry={handleRemoveEntry}
+            handleCardClick={handleCardClick}>
             </JournalCard>
         }
 
         )}
       </div>
+
+       {/* Modal for showing entry details */}
+       <Modal show={showDescriptionModal} onHide={handleCloseCardClick}>
+          <Modal.Header closeButton>
+            <Modal.Title>{showData?.header}</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <h5>บันทึกวันที่ : {showData?.date}</h5>
+            <p>{showData?.description}</p>
+          </Modal.Body>
+
+          <Modal.Footer>
+          <Button variant="primary" onClick={handleCloseCardClick}>
+            ดูจบแล้ว
+          </Button>
+        </Modal.Footer>
+        </Modal>
+
     </div>
     </div>
   );

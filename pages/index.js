@@ -21,11 +21,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div className="container pt-3">
-          <h1 className={`${styles.greetings}`}>สวัสดีคุณ, Celesca</h1>
+        <div className="container pt-5">
+
           <div className="row">
             
-              <div className="col col-12 col-lg-6">
+              <div className={`col col-12 col-lg-6 py-2 ${styles.static_background}`}>
                 <Link href="/calendar" className={`${styles.static_calendar}`}>
                   <StaticCalendarComponent 
                   events={events}
@@ -46,7 +46,7 @@ export default function Home() {
                   </span>
                   <div className="card-body">
                     <h3 className="card-title"><IoIosJournal/> Daily Journal</h3>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p className="card-text">บันทึกทุกสิ่งที่คุณเจอภายในชีวิตประจำวัน เพื่อทบทวนในวันหลัง</p>
                   </div>
                 </div>
                 </Link>
@@ -55,11 +55,11 @@ export default function Home() {
                 <div className={`card ${styles.card_info} p-4 mt-5`}>
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     4
-                    <span className="visually-hidden">journal collected</span>
+                    <span className="visually-hidden">todolist collected</span>
                   </span>
                   <div className="card-body">
                     <h3 className="card-title"><IoIosListBox/> To-do List</h3>
-                    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p className="card-text">กลัวจะลืมสิ่งที่ต้องทำ? จดไว้กับเราสิ แล้วคุณจะได้ไม่ลืม</p>
                   </div>
                 </div>
                 </Link>
