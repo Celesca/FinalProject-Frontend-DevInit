@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2';
 import styles from '@/styles/Todo.module.css'
 import { useState, useEffect } from 'react';
-import { v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import List from '@/components/List';
  
 export default function Todo() {
@@ -104,7 +104,7 @@ export default function Todo() {
     // // Load the data
     useEffect(() => {
       const loadData = localStorage.getItem("todo-data");
-      setList(JSON.parse(loadData));
+      setList(JSON.parse(loadData) || []);
     } , [])
     
     return (
