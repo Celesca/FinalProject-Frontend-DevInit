@@ -1,9 +1,14 @@
-import React from 'react';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import React from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
 
-const CalendarComponent = ({ events, handleEventClick, handleDateSelect, handleEventDrop }) => {
+const CalendarComponent = ({
+  events,
+  handleEventClick,
+  handleDateSelect,
+  handleEventDrop,
+}) => {
   return (
     <FullCalendar
       plugins={[dayGridPlugin, interactionPlugin]}
@@ -14,7 +19,6 @@ const CalendarComponent = ({ events, handleEventClick, handleDateSelect, handleE
       select={handleDateSelect} // Triggered when a date range is selected
       eventClick={handleEventClick}
       eventDrop={handleEventDrop}
-      
     />
   );
 };

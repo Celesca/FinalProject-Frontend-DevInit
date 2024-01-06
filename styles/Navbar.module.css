@@ -6,12 +6,12 @@
     color: var(--text-color);
 }
 
-.brand_text{
+.brand_text {
     color: var(--text-color);
     text-decoration: none;
 }
 
-.brand_text:hover{
+.brand_text:hover {
     text-decoration: none;
 }
 

@@ -4,21 +4,23 @@
     justify-content: space-between;
     padding: 1rem 1rem;
     background-color: var(--secondary-bg-color);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
     border-radius: 0.25rem;
     width: 50%;
     margin: 0.5rem auto;
 }
 
-.button_edit , .button_trash {
+.button_edit,
+.button_trash {
     cursor: pointer;
     padding: 5px;
     background-color: var(--bg-color);
     border-radius: 10px;
 }
 
-.button_edit:hover,.button_trash:hover {
-    background: rgba(255,255,255,0.7);
+.button_edit:hover,
+.button_trash:hover {
+    background: rgba(255, 255, 255, 0.7);
     transition: background-color 0.2s linear;
     transform: scale(1.02);
 }

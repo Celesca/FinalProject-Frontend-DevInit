@@ -1,12 +1,15 @@
 // Import necessary components and plugins
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
 
-const StaticCalendarComponent = ({ events, staticCalendar, /* other props... */ }) => {
+const StaticCalendarComponent = ({
+  events,
+  staticCalendar /* other props... */,
+}) => {
   const calendarOptions = {
     plugins: [dayGridPlugin, interactionPlugin],
-    initialView: 'dayGridMonth',
+    initialView: "dayGridMonth",
     events: events,
     editable: !staticCalendar, // Disable editing if it's a static calendar
     selectable: !staticCalendar, // Disable date selection if it's a static calendar

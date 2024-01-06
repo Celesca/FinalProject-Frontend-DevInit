@@ -3,8 +3,8 @@
 }
 
 .main {
-     height: 90vh;
-     background-color: var(--bg-color);
+    height: 90vh;
+    background-color: var(--bg-color);
 }
 
 .card_info {
@@ -14,23 +14,28 @@
 
 .card_info:hover {
     cursor: pointer;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     transition: background-color 0.1s linear;
 }
 
-.journal_card , .todo_card, .static_calendar_2 , .static_calendar {
+.journal_card,
+.todo_card,
+.static_calendar_2,
+.static_calendar {
     color: var(--text-color);
     text-decoration: none;
 }
 
-.journal_card:hover , .todo_card:hover , .static_calendar:hover{
-    cursor:pointer;
+.journal_card:hover,
+.todo_card:hover,
+.static_calendar:hover {
+    cursor: pointer;
     color: var(--text-color);
     text-decoration: none;
 }
 
 .static_background:hover {
-    background-color: rgba(13,110,253,0.5);
+    background-color: rgba(13, 110, 253, 0.5);
     transition: background-color 0.1s linear;
 }
 

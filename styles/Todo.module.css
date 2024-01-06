@@ -8,7 +8,7 @@
 /* Search bar Section */
 
 .search_form {
-    border:0;
+    border: 0;
     background-color: var(--secondary-bg-color);
 }
 
@@ -29,7 +29,7 @@
 }
 
 .submit_btn {
-    border:0;
+    border: 0;
     color: #fff;
 }
 
