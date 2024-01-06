@@ -1,4 +1,4 @@
-# Personal Manager Web Application
+# Era Planner
 
 ![Personal_Manager](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/personal_manager.PNG)
 
