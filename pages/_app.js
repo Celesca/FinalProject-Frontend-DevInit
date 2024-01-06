@@ -22,6 +22,8 @@ export default function App({ Component, pageProps }) {
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous"
         ></link>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" />
+
       </Head>
       <Script
         id="bootstrap-cdn"
