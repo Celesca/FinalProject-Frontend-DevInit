@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
-// import Form from 'react-bootstrap/Form';
 import { v4 as uuidv4 } from 'uuid';
 import JournalCard from '@/components/JournalCard';
 import styles from '@/styles/Journal.module.css';
@@ -91,8 +88,6 @@ const DailyJournalPage = () => {
     });
     
   }
-
-
 
   const showAlert =(eventIcon,eventTitle,eventText) => {
       Swal.fire({

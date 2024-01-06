@@ -4,8 +4,9 @@ const EventContext = createContext();
 
 export const EventProvider = ({ children }) => {
   const [events, setEvents] = useState([
-    { title: 'Event 1', date: '2024-01-01' },
-    { title: 'Event 2', date: '2024-01-15' },
+    { title: 'Borntodev Project Week 3', date: '2024-01-01' },
+    { title: 'Borntodev Final Project Presentation', date: '2024-01-08' },
+    { title: 'Microsoft .NET Conference', date: '2024-01-24'}
     // Add more events as needed
   ]);
 

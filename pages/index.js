@@ -16,7 +16,6 @@ export default function Home() {
   const [ numberJournal, setNumberJournal ] = useState(0);
   const [ numberTodo, setNumberTodo ] = useState(0);
 
-
   // Alert for the events.
   useEffect(() => {
 
@@ -35,14 +34,12 @@ export default function Home() {
         Swal.fire({
           icon: 'warning',
           title: event.title,
-          text: `คุณมีกิจกรรม ${event.title} ในอีก ${dayDifference} ข้างหน้า`
+          text: `คุณมีกิจกรรม ${event.title} ในอีก ${dayDifference} วันข้างหน้า`
         })
       }
     })
 
   }, []);
-
-
 
   return (
     <>

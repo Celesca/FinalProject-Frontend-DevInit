@@ -1,4 +1,5 @@
 import { Card, Button } from 'react-bootstrap';
+import styles from '@/styles/Journal.module.css';
 
 export default function JournalCard(props) {
 
@@ -13,7 +14,8 @@ export default function JournalCard(props) {
     <div className="col">
     <Card>
         <Card.Body>
-            <Card.Title onClick={() => handleCardClickInternal()}>{header}</Card.Title>
+            <Card.Title className={`${styles.journalcard_header}`} 
+            onClick={() => handleCardClickInternal()}>{header}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{date}</Card.Subtitle>
             <div className="d-flex justify-content-end">
             <Button variant="secondary" className="" onClick={() => handleRemoveEntry(uuid)}>

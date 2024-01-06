@@ -12,6 +12,15 @@
 
 .button_edit , .button_trash {
     cursor: pointer;
+    padding: 5px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+}
+
+.button_edit:hover,.button_trash:hover {
+    background: rgba(255,255,255,0.7);
+    transition: background-color 0.2s linear;
+    transform: scale(1.02);
 }
 
 @media only screen and (max-width: 768px) {

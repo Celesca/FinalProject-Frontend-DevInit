@@ -9,3 +9,8 @@
     margin-top: 20px;
     border: 1px solid var(--secondary-bg-color);
 }
+
+.journalcard_header:hover {
+    cursor:pointer;
+    color: #0D6EFD;
+}
