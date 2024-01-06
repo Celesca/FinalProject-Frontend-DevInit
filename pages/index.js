@@ -17,10 +17,24 @@ export default function Home() {
 
   // Alert for the events.
   useEffect(() => {
-    const loadJournal = JSON.parse(localStorage.getItem("journal-data")) || 0;
-    const loadTodo = JSON.parse(localStorage.getItem("todo-data")) || 0;
-    setNumberJournal(loadJournal.length);
-    setNumberTodo(loadTodo.length);
+    let loadJournal = JSON.parse(localStorage.getItem("journal-data"));
+
+    if (!loadJournal) {
+      setNumberJournal(0);
+    }
+    else {
+      setNumberJournal(loadJournal.length);
+    }
+
+    let loadTodo = JSON.parse(localStorage.getItem("todo-data"));
+
+    if (!loadTodo) {
+      setNumberTodo(0);
+    }
+    else {
+      setNumberTodo(loadTodo.length);
+    }
+
 
     events.forEach((event) => {
       const today = new Date();
