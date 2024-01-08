@@ -2,6 +2,12 @@
     background-color: var(--bg-color);
 }
 
+.main h1 {
+    text-align: start;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
 .calendar_body {
     color: var(--text-color);
 }
@@ -18,5 +24,9 @@
 @media only screen and (max-width: 768px) {
     .add_button {
         justify-content: center;
+    }
+
+    .main h1 {
+        text-align: center;
     }
 }

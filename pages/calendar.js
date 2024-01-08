@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useEventContext } from "@/contexts/EventContext";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Calendar() {
   const { events: contextEvents, setEvents } = useEventContext();
   const [localEvents, setLocalEvents] = useState(contextEvents);
@@ -16,14 +14,6 @@ export default function Calendar() {
   useEffect(() => {
     setLocalEvents(contextEvents);
   });
-
-  const handleEventClick = (event) => {
-    console.log("Event Clicked:", event);
-  };
-
-  const handleDateSelect = (selectInfo) => {
-    console.log("Date Selected:", selectInfo.startStr);
-  };
 
   const handleShowModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
@@ -50,8 +40,11 @@ export default function Calendar() {
 
   return (
     <>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${styles.main}`}>
+        
         <div className={`container pt-3`}>
+        <h1>Calendar</h1>
+        
           <div className={`${styles.add_button}`}>
             <Button
               variant="primary"
@@ -64,8 +57,6 @@ export default function Calendar() {
           <div className={`${styles.calendar_body}`}>
             <CalendarComponent
               events={localEvents}
-              handleEventClick={handleEventClick}
-              handleDateSelect={handleDateSelect}
             />
           </div>
         </div>
