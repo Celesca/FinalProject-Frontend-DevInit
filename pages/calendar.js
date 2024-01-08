@@ -1,5 +1,4 @@
 import styles from "@/styles/Calendar.module.css";
-import { Inter } from "next/font/google";
 import CalendarComponent from "@/components/Calendar";
 import { useState, useEffect } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
@@ -64,13 +63,13 @@ export default function Calendar() {
         {/* Modal for adding a new event */}
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Add Event</Modal.Title>
+            <Modal.Title>เพิ่มอีเว้นท์ใหม่</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
               {/* Date Input */}
               <Form.Group className="mb-3" controlId="formDate">
-                <Form.Label>Date</Form.Label>
+                <Form.Label>วันที่</Form.Label>
                 <Form.Control
                   type="date"
                   name="date"
@@ -81,7 +80,7 @@ export default function Calendar() {
 
               {/* Title Input */}
               <Form.Group className="mb-3" controlId="formTitle">
-                <Form.Label>Title</Form.Label>
+                <Form.Label>ชื่อหัวข้องาน</Form.Label>
                 <Form.Control
                   type="text"
                   name="title"
