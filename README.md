@@ -3,8 +3,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerLogo.PNG">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+
+  <a href="https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerLogo.png">
+    <img src="https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerLogo.PNG" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Era Planner</h3>
