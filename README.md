@@ -46,8 +46,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Era Planner][era-planner]]([https://example.com](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/era_planner.PNG))
+![Era Planner](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlanner.PNG)
 
 Personal Manager is the Front-end project that have concept of managing daily life.
 There are features to manage your events such as calendar, daily journal and to-do list.
