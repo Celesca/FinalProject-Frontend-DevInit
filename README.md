@@ -48,19 +48,18 @@
 ## About The Project
 ![Era Planner](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlanner.PNG)
 
-Personal Manager is the Front-end project that have concept of managing daily life.
+Era Planner is the Front-end project that have concept of managing daily life.
 There are features to manage your events such as calendar, daily journal and to-do list.
 The project was created using Next.js, Bootstrap and FullCalendar.js.
 Unit Testing with Jest.js
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+There are several app features you can use:
+* Calendar feature :
+<br>Organize and plan the event in the calendar. They will alert you at the Home page 3 days before the event will occur.
+* Daily Journal feature :
+<br>Take a note from the story or lecture and review it in the future.
+* To-do List feature:
+<br>Forgot to do something you need to? Note some lists and do it to clear.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,13 +70,7 @@ Use the `BLANK_README.md` to get started.
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,22 +94,24 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Celesca/FinalProject-Frontend-DevInit
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Move to folder directory
+   ```sh
+   cd FinalProject-Frontend-DevInit
+   ```
+4. Run the project
+   ```sh
+   npm run dev
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->
