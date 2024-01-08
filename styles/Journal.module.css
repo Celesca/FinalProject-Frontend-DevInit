@@ -14,3 +14,7 @@
     cursor: pointer;
     color: #0D6EFD;
 }
+
+.journalcard_container {
+    padding: 15px 5px 5px 15px;
+}

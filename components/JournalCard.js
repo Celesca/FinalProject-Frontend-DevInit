@@ -16,8 +16,8 @@ export default function JournalCard(props) {
   };
 
   return (
-    <div className="col">
-      <Card>
+    <div className={`col`}>
+      <Card className={`${styles.journalcard_container}`}>
         <Card.Body>
           <Card.Title
             className={`${styles.journalcard_header}`}
@@ -32,7 +32,7 @@ export default function JournalCard(props) {
               className=""
               onClick={() => handleRemoveEntry(uuid)}
             >
-              Remove
+              ลบบันทึก
             </Button>
           </div>
         </Card.Body>
