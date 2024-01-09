@@ -55,9 +55,14 @@ There are several app features you can use:
 * Calendar feature :
 <br>Organize and plan the event in the calendar. They will alert you at the Home page 3 days before the event will occur.
 * Daily Journal feature :
-<br>Take a note from the story or lecture and review it in the future.
+<br>Take a note from the story or lecture and review it in the future. Using the local storage to load and manage the journal data.
 * To-do List feature:
-<br>Forgot to do something you need to? Note some lists and do it to clear.
+<br>Forgot to do something you need to? Note some lists and do it to clear. Using the local storage to load and manage the to-do list data. 
+* Alert feature:
+<br>When you finally enter the home page. If you have some events that will going to occur in 3 days. It will start to alert.
+<br>When you clicked the important button such as Delete Button, It will also generated the alert before the action.
+* Light/Dark Mode feature:
+<br>There is a theme switcher at the navbar. When toggle the button, the theme will be switch to its color theme.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,12 +82,12 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
+First you need to setting up your locally folder.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+This is how to list things you need to use the software and how to install them via npm.
 * npm
   ```sh
   npm install npm@latest -g
@@ -90,7 +95,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+_Following the guide from below through your terminal._
 
 1. Clone the repo
    ```sh
@@ -110,6 +115,17 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- UX/UI Design -->
+
+## UX/UI Design Prototype
+
+Using Figma to design the prototype of this web application to follows and adjust them.
+I have covered about Light and Dark Mode
+
+Here is the link you can check in Figma design framework.
+
+
 
 
 <!-- Test Report -->
@@ -173,7 +189,10 @@ _Below is an example of how you can instruct your audience on installing and set
 npm test
 ```
 
-- Manual Testing by
+## Manual Testing by using different persons.
+
+
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -186,13 +205,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- CONTACT -->
 ## Contact
 
-Linkedin - [@sawit-koseeyaumporn](https://twitter.com/your_username) - email@example.com
+Linkedin - [@sawit-koseeyaumporn]((https://www.linkedin.com/in/sawit-koseeyaumporn-418941256/)) - Sawit Koseeyaumporn
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/your_username/repo_name](https://github.com/Celesca/FinalProject-Frontend-DevInit)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
