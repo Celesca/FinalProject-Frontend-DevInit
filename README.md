@@ -113,15 +113,68 @@ _Below is an example of how you can instruct your audience on installing and set
 
 
 <!-- Test Report -->
-## Test Report
+## Testing Report
 
-- Automate Testing using Jest.js
+### 1. Page Load and Rendering
+
+#### Test Case 1:
+- **Description:** Successfully loads and displays accurate information on the home page.
+
+#### Test Case 2:
+- **Description:** Successfully loads and displays the current calendar on the calendar page.
+
+#### Test Case 3:
+- **Description:** Loads and displays the daily journal page, presenting a form for writing entries.
+
+### 2. User Interaction
+
+#### Test Case 4:
+- **Description:** Clicking on a To-Do List item opens the edit page for that item.
+
+#### Test Case 5:
+- **Description:** Adding a new activity in the calendar works correctly.
+
+#### Test Case 6:
+- **Description:** The To-Do search function within the application operates as expected.
+
+### 3. Responsive Design
+
+#### Test Case 7:
+- **Description:** The home page displays correctly on mobile screen sizes.
+
+#### Test Case 8:
+- **Description:** The calendar page adapts appropriately to tablet screen sizes.
+
+#### Test Case 9:
+- **Description:** The daily journal page shows suitable rendering on large screens.
+
+### 4. Specific Functional Testing
+
+#### Test Case 10:
+- **Description:** Successfully saves data in the daily journal form, and retrieval of that data works as intended.
+
+#### Test Case 11:
+- **Description:** Creation and deletion of items in the To-Do List function as expected.
+
+#### Test Case 12:
+- **Description:** Theme changes and user-specific settings are applied and saved correctly.
+
+### 5. App Functionality
+
+#### Test Case 13:
+- **Description:** The functionality of notifications or reminders is tested and verified.
+
+
+## Automate Testing using Jest.js
+  - Automate Testing will cover "Page Load and Rendering" section in test cases. Because Jest.js can used for testing the rendering page.
+  - You can run the following code to perform the unit testing in this projects.
 
 ```sh
-
+npm test
 ```
 
-- Manual Testing
+- Manual Testing by
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
