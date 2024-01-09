@@ -112,29 +112,16 @@ _Below is an example of how you can instruct your audience on installing and set
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+<!-- Test Report -->
+## Test Report
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+- Automate Testing using Jest.js
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```
 
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- Manual Testing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
