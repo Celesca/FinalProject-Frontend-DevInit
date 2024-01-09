@@ -35,7 +35,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#design-prototype">Design Prototype</a></li>
+    <li><a href="#test-report">Test Report</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -118,7 +119,7 @@ _Following the guide from below through your terminal._
 
 <!-- UX/UI Design -->
 
-## UX/UI Design Prototype
+## Design Prototype
 
 Using Figma to design the prototype of this web application to follows and adjust them.
 I have covered about Light and Dark Mode
@@ -129,7 +130,7 @@ Here is the link you can check in Figma design framework.
 
 
 <!-- Test Report -->
-## Testing Report
+## Test Report
 
 ### 1. Page Load and Rendering
 
