@@ -191,6 +191,7 @@ npm test
 ```
 
 ## Manual Testing by using different persons.
+  - Doing usability testing by choose 3 different people to asked them about how do you feel, dislike or like it?
 
 
 
