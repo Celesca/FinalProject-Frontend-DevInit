@@ -121,8 +121,12 @@ _Following the guide from below through your terminal._
 
 ## Design Prototype
 
+![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype.PNG)
+
 Using Figma to design the prototype of this web application to follows and adjust them.
 I have covered about Light and Dark Mode
+
+
 
 Here is the link you can check in Figma design framework.
 
