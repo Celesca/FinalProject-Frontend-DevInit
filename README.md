@@ -126,6 +126,8 @@ I have covered about Light and Dark Mode
 
 Here is the link you can check in Figma design framework.
 
+[EraPlanner Prototype](https://www.figma.com/file/r9VDViLPuaDHZ6vuGNi9hX/Personal-Manager?type=design&node-id=0%3A1&mode=dev)
+
 
 
 
