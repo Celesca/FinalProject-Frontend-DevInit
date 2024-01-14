@@ -73,8 +73,8 @@ There are several app features you can use:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* Next.js 14
+* Bootstrap 5
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,7 +121,7 @@ _Following the guide from below through your terminal._
 
 ## Design Prototype
 
-![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype.PNG)
+![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype2.PNG)
 
 Using Figma to design the prototype of this web application to follows and adjust them.
 The main keys of this web application design including:
@@ -201,6 +201,7 @@ npm test
 
 ## Manual Testing and Usability Test
   - Recording the testing and checked all the test cases.
+  - Test Report Docs : [FinalProject_DevInit_TestReport](...)
   - Video : [FinalProject_DevInit](...)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
