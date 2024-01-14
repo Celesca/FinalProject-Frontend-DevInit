@@ -120,7 +120,7 @@ export default function Todo() {
   return (
     <>
       <section className={`container-fluid ${styles.todo_container}`}>
-        <h1 className="text-center display-2">To-do List</h1>
+        <h1 className="text-center display-2 mb-4">To-do List</h1>
 
         <div className="container">
           <div className="row justify-content-center">
@@ -141,7 +141,7 @@ export default function Todo() {
 
                   <div className="col-auto">
                     <button
-                      className={`btn btn-lg btn-primary ${styles.submit_btn}`}
+                      className={`btn btn-lg ${checkEditItem ? "btn-success" : "btn-primary"} ${styles.submit_btn}`}
                       type="submit"
                     >
                       {checkEditItem ? "แก้ไขข้อมูล" : "เพิ่มข้อมูล"}
