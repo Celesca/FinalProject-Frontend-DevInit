@@ -121,7 +121,7 @@ _Following the guide from below through your terminal._
 
 ## Design Prototype
 
-![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype2.PNG)
+![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype2.png)
 
 Using Figma to design the prototype of this web application to follows and adjust them.
 The main keys of this web application design including:
