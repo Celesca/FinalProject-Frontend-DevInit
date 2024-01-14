@@ -121,13 +121,20 @@ _Following the guide from below through your terminal._
 
 ## Design Prototype
 
-Using Figma to design the prototype of this web application to follows and adjust them.
-I have covered about Light and Dark Mode
+![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype.PNG)
 
-Here is the link you can check in Figma design framework.
+Using Figma to design the prototype of this web application to follows and adjust them.
+The main keys of this web application design including:
+- Easy to use and minimal theme
+- Convenience and faster. No complex UI
+- Monotone and basic color theme
+- Have Light/Dark mode to prefer UX
+- No complex shape and no animation
+
+
+Here is the link you can check in Figma design prototype. There's a 2 flow including Phone and Desktop version.
 
 [EraPlanner Prototype](https://www.figma.com/file/r9VDViLPuaDHZ6vuGNi9hX/Personal-Manager?type=design&node-id=0%3A1&mode=dev)
-
 
 
 
