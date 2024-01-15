@@ -5,7 +5,6 @@ import Link from "next/link";
 import StaticCalendarComponent from "@/components/StaticCalendar";
 import { useEventContext } from "@/contexts/EventContext";
 import { useEffect, useState } from "react";
-import { calculateDateDifference } from "@/utils/dateUtils";
 import Swal from "sweetalert2";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -39,9 +38,11 @@ export default function Home() {
     events.forEach((event) => {
       const today = new Date();
       const eventDate = new Date(event.date);
-      const dayDifference = calculateDateDifference(today, eventDate);
+      const dayDifference = Math.ceil((eventDate - today)/(24*3600*1000)); // milliseconds
+      
+      console.log(dayDifference)
 
-      if (dayDifference <= 3) {
+      if (dayDifference <= 3 && dayDifference > 0) {
         Swal.fire({
           icon: "warning",
           title: event.title,
