@@ -67,11 +67,7 @@ There are several app features you can use:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * Next.js 14
 * Bootstrap 5
@@ -200,8 +196,8 @@ npm test
 
 ## Manual Testing and Usability Test
   - Recording the testing and checked all the test cases.
-  - Test Report Docs : [FinalProject_DevInit_TestReport](...)
-  - Video : [FinalProject_DevInit_Video](...)
+  - Test Report Docs : [FinalProject_DevInit_TestReport](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerTest.pdf)
+  - Video : [FinalProject_DevInit_Video](https://www.youtube.com/watch?v=LyzN7LaHycQ)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -224,8 +220,6 @@ Project Link: [EraPlanner](https://github.com/Celesca/FinalProject-Frontend-DevI
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Font Awesome](https://fontawesome.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
