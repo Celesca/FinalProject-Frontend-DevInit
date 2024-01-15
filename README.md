@@ -73,11 +73,12 @@ There are several app features you can use:
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* Next.js 14
+* Bootstrap 5
+* FullCalendar.js
+* Jest.js
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- GETTING STARTED -->
@@ -121,7 +122,7 @@ _Following the guide from below through your terminal._
 
 ## Design Prototype
 
-![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype.PNG)
+![Era Planner Prototype](https://github.com/Celesca/Celesca/blob/main/Project%20Picture/EraPlannerPrototype2.png)
 
 Using Figma to design the prototype of this web application to follows and adjust them.
 The main keys of this web application design including:
@@ -134,9 +135,7 @@ The main keys of this web application design including:
 
 Here is the link you can check in Figma design prototype. There's a 2 flow including Phone and Desktop version.
 
-[EraPlanner Prototype](https://www.figma.com/file/r9VDViLPuaDHZ6vuGNi9hX/Personal-Manager?type=design&node-id=0%3A1&mode=dev)
-
-
+Figma : [EraPlanner Prototype](https://www.figma.com/file/r9VDViLPuaDHZ6vuGNi9hX/Personal-Manager?type=design&node-id=0%3A1&mode=dev)
 
 <!-- Test Report -->
 ## Test Report
@@ -201,7 +200,8 @@ npm test
 
 ## Manual Testing and Usability Test
   - Recording the testing and checked all the test cases.
-  - Video : [FinalProject_DevInit](...)
+  - Test Report Docs : [FinalProject_DevInit_TestReport](...)
+  - Video : [FinalProject_DevInit_Video](...)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
