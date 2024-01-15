@@ -73,8 +73,9 @@ export default function Home() {
             <div className="col col-12 col-lg-6">
               <div className="d-flex flex-column">
                 {/* Daily Journal Card */}
-                <Link href="journal" className={`${styles.journal_card}`}>
+
                   <div className={`card ${styles.card_info} p-4 mt-5`}>
+                  <Link href="journal" className={`${styles.journal_card}`}>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       {numberJournal}
                       <span className="visually-hidden">journal collected</span>
@@ -88,11 +89,13 @@ export default function Home() {
                         เพื่อทบทวนในวันหลัง
                       </p>
                     </div>
+                    </Link>
                   </div>
-                </Link>
 
-                <Link href="todo" className={`${styles.todo_card}`}>
+
                   <div className={`card ${styles.card_info} p-4 mt-5`}>
+                    
+                  <Link href="todo" className={`${styles.todo_card}`}>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       {numberTodo}
                       <span className="visually-hidden">
@@ -107,9 +110,11 @@ export default function Home() {
                         กลัวจะลืมสิ่งที่ต้องทำ? จดไว้กับเราสิ แล้วคุณจะได้ไม่ลืม
                       </p>
                     </div>
+                  </Link>
                   </div>
-                </Link>
+                  
               </div>
+
             </div>
           </div>
         </div>

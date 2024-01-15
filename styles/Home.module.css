@@ -3,7 +3,6 @@
 }
 
 .main {
-    height: 90vh;
     background-color: var(--bg-color);
 }
 
@@ -13,7 +12,7 @@
 }
 
 .card_info:hover {
-    cursor: pointer;
+    cursor:pointer;
     background-color: rgba(255, 255, 255, 0.7);
     transition: background-color 0.1s linear;
 }
@@ -29,13 +28,12 @@
 .journal_card:hover,
 .todo_card:hover,
 .static_calendar:hover {
-    cursor: pointer;
     color: var(--text-color);
     text-decoration: none;
 }
 
 .static_background:hover {
-    background-color: rgba(13, 110, 253, 0.5);
+    background-color: rgba(55,136,216,0.2);
     transition: background-color 0.1s linear;
 }
 
