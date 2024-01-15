@@ -93,8 +93,8 @@ export default function Todo() {
       );
     } else {
       Swal.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        title: "ต้องการจะลบข้อมูล?",
+        text: "คุณจะไม่สามารถย้อนกลับได้!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -104,7 +104,7 @@ export default function Todo() {
         if (result.isConfirmed) {
           Swal.fire({
             title: "Deleted!",
-            text: "Your file has been deleted.",
+            text: "ลบไฟล์เรียบร้อยแล้ว",
             icon: "success",
           });
 
