@@ -20,8 +20,7 @@ export default function Home() {
 
     if (!loadJournal) {
       setNumberJournal(0);
-    }
-    else {
+    } else {
       setNumberJournal(loadJournal.length);
     }
 
@@ -29,18 +28,16 @@ export default function Home() {
 
     if (!loadTodo) {
       setNumberTodo(0);
-    }
-    else {
+    } else {
       setNumberTodo(loadTodo.length);
     }
-
 
     events.forEach((event) => {
       const today = new Date();
       const eventDate = new Date(event.date);
-      const dayDifference = Math.ceil((eventDate - today)/(24*3600*1000)); // milliseconds
-      
-      console.log(dayDifference)
+      const dayDifference = Math.ceil((eventDate - today) / (24 * 3600 * 1000)); // milliseconds
+
+      console.log(dayDifference);
 
       if (dayDifference <= 3 && dayDifference > 0) {
         Swal.fire({
@@ -74,7 +71,7 @@ export default function Home() {
               <div className="d-flex flex-column">
                 {/* Daily Journal Card */}
 
-                  <div className={`card ${styles.card_info} p-4 mt-5`}>
+                <div className={`card ${styles.card_info} p-4 mt-5`}>
                   <Link href="journal" className={`${styles.journal_card}`}>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       {numberJournal}
@@ -89,12 +86,10 @@ export default function Home() {
                         เพื่อทบทวนในวันหลัง
                       </p>
                     </div>
-                    </Link>
-                  </div>
+                  </Link>
+                </div>
 
-
-                  <div className={`card ${styles.card_info} p-4 mt-5`}>
-                    
+                <div className={`card ${styles.card_info} p-4 mt-5`}>
                   <Link href="todo" className={`${styles.todo_card}`}>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       {numberTodo}
@@ -111,10 +106,8 @@ export default function Home() {
                       </p>
                     </div>
                   </Link>
-                  </div>
-                  
+                </div>
               </div>
-
             </div>
           </div>
         </div>
